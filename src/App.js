@@ -8,12 +8,14 @@ import './App.css';
 class App extends React.Component {
 
   state = {
-    users: []
+    users: [],
+    loading: false
   };
 
   async componentDidMount() {
+    this.setState({ loading: true });
     const res = await axios.get('https://api.github.com/users');
-    this.setState({ users: res.data });
+    this.setState({ users: res.data, loading: false });
   };
 
   render() {
@@ -21,7 +23,7 @@ class App extends React.Component {
       <div className="App">
         <Navbar />
         <div className="container">
-          <Users users={this.state.users} />
+          <Users loading={this.state.loading} users={this.state.users}  />
         </div>
       </div>
     );
