@@ -51,7 +51,7 @@ class User extends Component {
         ) : (
           <i className='fas fa-times-circle text-danger' />
         )}
-        <div className='card grid-2'>
+        <div className='card card-shadow grid-2'>
           <div className='all-center'>
             <img
               src={avatar_url}
@@ -69,7 +69,7 @@ class User extends Component {
                 <p>{bio}</p>
               </Fragment>
             )}
-            <a href={html_url} className='btn btn-dark my-1'>
+            <a href={html_url} className='btn btn-primary my-1'>
               Visit Github Profile
             </a>
             <ul>
@@ -99,8 +99,8 @@ class User extends Component {
             </ul>
           </div>
         </div>
-        <div className='card text-center'>
-          <div className='badge badge-primary'>Followers: {followers}</div>
+        <div className='card card-shadow text-center'>
+          <div className='badge badge-danger'>Followers: {followers}</div>
           <div className='badge badge-success'>Following: {following}</div>
           <div className='badge badge-light'>Public Repos: {public_repos}</div>
           <div className='badge badge-dark'>Public Gists: {public_gists}</div>
